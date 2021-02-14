@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { number, string } from 'yargs';
+import { NumericLiteral } from '@babel/types';
 
 interface NAME {
   first: string;
@@ -33,6 +34,14 @@ const userA: USER = {
   password: "yyy",
 };
 
+// Union Types
+let value: boolean | number
+value = 10;
+value = true;
+
+let arrayUni: (number | string)[];
+
+arrayUni = [0, 1, 2, "hello"];
 
 function App() {
   return (
