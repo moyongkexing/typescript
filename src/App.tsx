@@ -3,7 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import { number, string } from 'yargs';
 import { NumericLiteral } from '@babel/types';
+import Data from "./data.json";
 
+type USERS = typeof Data;
 interface NAME {
   first: string;
   last: string | null;
