@@ -4,6 +4,7 @@ import './App.css';
 import { number, string } from 'yargs';
 import { NumericLiteral } from '@babel/types';
 import Data from "./data.json";
+import TestComponent from './TestComponent';
 
 type USERS = typeof Data;
 interface NAME {
@@ -102,20 +103,20 @@ const comp1 = "test";
 let comp2:string = comp1;
 
 let comp3:string = "test";
-let comp4: "test" = comp3;
+// let comp4: "test" = comp3;
 
 let funcComp1 = (x:number) => {}
 let funcComp2 = (x:string) => {}
 
-funcComp1 = funcComp2;
-funcComp2 = funcComp1;
+// funcComp1 = funcComp2;
+// funcComp2 = funcComp1;
 
 // Generixs
 interface GEN<T>{
   item: T;
 }
 const gen0: GEN<string> = {item: "hello"};
-const gen1: GEN = {item: "hello"};
+// const gen1: GEN = {item: "hello"};
 const gen2: GEN<number> = {item: 12};
 
 interface GEN1<T=string>{
@@ -127,7 +128,7 @@ interface GEN2<T extends string | number>{
   item: T;
 }
 const gen4: GEN2<string> = { item: "test"};
-const gen5: GEN2<boolean> = { item: false };
+// const gen5: GEN2<boolean> = { item: false };
 
 
 function funcGen<T>(props: T) {
@@ -140,7 +141,7 @@ function funcGen1<T extends string | null>(props: T) {
   return{value: props}
 }
 const gen8 = funcGen1("string");
-const gen9 = funcGen1(123);
+// const gen9 = funcGen1(123);
 
 interface Props { 
   price: number;
@@ -155,10 +156,12 @@ const funcGen4 = <T extends Props>(props: T) => {
 }
 
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <TestComponent text={123} />
+      </header>
     </div>
   );
 }
