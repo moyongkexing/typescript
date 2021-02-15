@@ -160,7 +160,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <TestComponent text={123} />
+        <TestComponent text="hello" />
       </header>
     </div>
   );
